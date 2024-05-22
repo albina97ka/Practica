@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.practica.Admin">
+    <tabs>
+        <Tab text="Аккаунты и заявки">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                    <children>
+                        <TableView fx:id="TableUser" layoutX="9.0" layoutY="59.0" prefHeight="195.0" prefWidth="820.0">
+                            <columns>
+                                <TableColumn fx:id="IDuser" prefWidth="24.0" text="ID" />
+                                <TableColumn fx:id="UserName" prefWidth="83.0" text="Имя" />
+                                <TableColumn fx:id="UserLastName" prefWidth="117.0" text="Фамилия" />
+                                <TableColumn fx:id="Surname" prefWidth="111.0" text="Отчество" />
+                                <TableColumn fx:id="Passport" prefWidth="114.0" text="Паспорт" />
+                                <TableColumn fx:id="Number" prefWidth="120.0" text="Номер" />
+                                <TableColumn fx:id="Login" prefWidth="112.0" text="Логин" />
+                                <TableColumn fx:id="Password" prefWidth="98.0" text="Пароль" />
+                            </columns>
+                        </TableView>
+                  <TableView fx:id="TableCar" layoutX="9.0" layoutY="256.0" onMousePressed="#Car" prefHeight="213.0" prefWidth="775.0">
+                     <columns>
+                        <TableColumn fx:id="IDcar" prefWidth="24.0" text="ID" />
+                        <TableColumn fx:id="CarName" prefWidth="122.0" text="Имя" />
+                        <TableColumn fx:id="CarLastName" prefWidth="152.0" text="Фамилия" />
+                        <TableColumn fx:id="CarType" prefWidth="174.0" text="Вид машины" />
+                        <TableColumn fx:id="CarBrand" prefWidth="155.0" text="Марка машины" />
+                        <TableColumn fx:id="CarModel" prefWidth="147.0" text="Модель машины" />
+                     </columns>
+                  </TableView>
+                  <Button fx:id="delete_car" layoutX="199.0" layoutY="21.0" mnemonicParsing="false" onMouseClicked="#Car" text="Удалить заявку" />
+                  <Button fx:id="exit_car" layoutX="735.0" layoutY="9.0" mnemonicParsing="false" text="Выход" />
+                  <TextField fx:id="Id_car" layoutX="37.0" layoutY="21.0" text="ID" />
+                  <Button fx:id="ob_archive" layoutX="305.0" layoutY="22.0" mnemonicParsing="false" onMouseClicked="#User" text="Обновить" />
+                    </children></AnchorPane>
+            </content>
+        </Tab>
+        <Tab fx:id="Archive" text="Архив">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                    <children>
+                        <Label layoutX="257.0" layoutY="30.0" text="История заказов ">
+                            <font>
+                                <Font size="23.0" />
+                            </font>
+                        </Label>
+                        <TableView fx:id="TableArchive" layoutX="7.0" layoutY="81.0" prefHeight="389.0" prefWidth="787.0">
+                            <columns>
+                                <TableColumn fx:id="IDarchive" prefWidth="34.0" text="ID" />
+                                <TableColumn fx:id="Name_archive" prefWidth="112.0" text="Имя" />
+                                <TableColumn fx:id="lastname_archive" prefWidth="143.0" text="Фамилия" />
+                                <TableColumn fx:id="type_archive" prefWidth="160.0" text="Вид машины" />
+                                <TableColumn fx:id="brand_archive" prefWidth="179.0" text="Марка машины" />
+                                <TableColumn fx:id="Model_archive" prefWidth="149.0" text="Модель машины" />
+                            </columns>
+                        </TableView>
+                        <Button fx:id="obArchive" layoutX="480.0" layoutY="35.0" mnemonicParsing="false" onMouseClicked="#Archive" text="Обновить" />
+                  <Button fx:id="exit_archive" layoutX="743.0" layoutY="14.0" mnemonicParsing="false" text="Выход" />
+                    </children>
+                </AnchorPane>
+            </content>
+        </Tab>
+    </tabs>
+</TabPane>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #fafafa;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.practica.Regict">
+    <children>
+        <Label layoutX="253.0" layoutY="28.0" text="Регистрация" textAlignment="CENTER">
+            <font>
+                <Font size="36.0" />
+            </font>
+        </Label>
+        <TextField fx:id="CarName" layoutX="84.0" layoutY="108.0" prefHeight="35.0" prefWidth="201.0" text="Имя" />
+        <TextField fx:id="CarLastname" layoutX="84.0" layoutY="152.0" prefHeight="35.0" prefWidth="201.0" text="Фамилия " />
+        <TextField fx:id="CarSurname" layoutX="84.0" layoutY="200.0" prefHeight="35.0" prefWidth="201.0" text="Отчество" />
+        <TextField fx:id="CarPassword" layoutX="395.0" layoutY="247.0" prefHeight="35.0" prefWidth="201.0" text="Пароль" />
+        <TextField fx:id="CarLogin" layoutX="395.0" layoutY="200.0" prefHeight="35.0" prefWidth="201.0" text="Логин" />
+        <TextField fx:id="CarPassport" layoutX="395.0" layoutY="108.0" prefHeight="35.0" prefWidth="201.0" text="Серия и номер поспорта" />
+        <TextField fx:id="CarNumber" layoutX="395.0" layoutY="152.0" prefHeight="35.0" prefWidth="201.0" text="Номер телефона" />
+        <Button fx:id="CarButton" layoutX="288.0" layoutY="332.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="137.0" text="Зарегистрироваться" />
+      <Button fx:id="exit_regist" layoutX="634.0" layoutY="16.0" mnemonicParsing="false" text="Назад" />
+    </children>
+</AnchorPane>
