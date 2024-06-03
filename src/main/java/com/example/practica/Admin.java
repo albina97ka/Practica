@@ -82,16 +82,6 @@ public class Admin {
     private Button exit_car;
     @FXML
     private Tab Archive;
-    @FXML
-    private Button ob_archive;
-
-    @FXML
-    protected void User(MouseEvent event) {
-        ClikUser();
-    }
-
-    @FXML
-    protected void Car(MouseEvent event) {ClikCar();}
 
     @FXML
     protected void Archive(MouseEvent event) {
@@ -149,6 +139,8 @@ public class Admin {
 
     @FXML
     void initialize() {
+        ClikUser();
+        ClikCar();
         exit_car.setOnAction(event -> {
             exit_car.getScene().getWindow().hide();
 

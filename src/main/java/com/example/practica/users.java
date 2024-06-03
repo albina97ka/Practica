@@ -21,7 +21,7 @@ public class users {
     public void setPassword(String Password) {
         this.Password = Password;
     }
-    public users(int IDTableData, String userLastNameTableData, String userNameTableData,String numberTableData, String mailTableData, String userLoginTableData, String userPasswordTableData,String serviceTableData) {
+    public users(int IDuser, String UserName, String UserLastName,String Surname, String Passport, String Number, String Login,String Password) {
         this.IDuser = IDuser;
         this.UserName = UserName;
         this.UserLastName = UserLastName;

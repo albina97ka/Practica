@@ -4,26 +4,38 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #fafafa;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.practica.Avtoris">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #AFEEEE;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.practica.Avtoris">
     <children>
-        <Button fx:id="applicationButton" layoutX="23.0" layoutY="356.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="142.0" style="-fx-background-color: #2E3348;" text="Регистрация" textFill="#f6f7fc" AnchorPane.rightAnchor="535.0" AnchorPane.topAnchor="356.0">
-            <font>
-                <Font size="14.0" />
-            </font></Button>
-        <TextField fx:id="UserLogin" layoutX="441.0" layoutY="262.0" prefHeight="25.0" prefWidth="196.0" promptText="Логин" />
-        <Button fx:id="adminButton" layoutX="468.0" layoutY="341.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="142.0" style="-fx-background-color: #2E3348;" text="Войти" textFill="#fcf3f3">
+      <ImageView fitHeight="430.0" fitWidth="764.0" layoutX="-18.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Image/photo_01.jpg" />
+         </image>
+      </ImageView>
+        <Button fx:id="applicationButton" layoutX="134.0" layoutY="263.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="78.0" style="-fx-background-color: #FFA500;" text="Регистрация" textFill="#f6f7fc" AnchorPane.rightAnchor="488.0" AnchorPane.topAnchor="263.0">
+         <font>
+            <Font size="10.0" />
+         </font></Button>
+        <TextField fx:id="UserLogin" layoutX="491.0" layoutY="227.0" prefHeight="25.0" prefWidth="196.0" promptText="Логин" />
+        <Button fx:id="adminButton" layoutX="518.0" layoutY="323.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="142.0" style="-fx-background-color: #2E3348;" text="Войти" textFill="#fcf3f3">
             <font>
                 <Font size="14.0" />
             </font>
         </Button>
-        <Label layoutX="442.0" layoutY="219.0" text="Вход в личный кабинет">
+        <Label layoutX="567.0" layoutY="187.0" text="Вход">
             <font>
-                <Font size="18.0" />
+                <Font name="System Bold" size="18.0" />
             </font>
         </Label>
-        <PasswordField fx:id="UserPass" layoutX="441.0" layoutY="297.0" prefHeight="25.0" prefWidth="196.0" promptText="Пароль" />
+        <PasswordField fx:id="UserPass" layoutX="491.0" layoutY="263.0" prefHeight="25.0" prefWidth="196.0" promptText="Пароль" />
+      <ImageView fitHeight="125.0" fitWidth="102.0" layoutX="32.0" layoutY="263.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Image/Clipped_image_20240603_192034.png" />
+         </image>
+      </ImageView>
     </children>
 </AnchorPane>
