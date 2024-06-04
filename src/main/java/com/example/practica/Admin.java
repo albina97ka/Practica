@@ -84,6 +84,9 @@ public class Admin {
     private Tab Archive;
 
     @FXML
+    protected void Car(MouseEvent event) {ClikCar();}
+
+    @FXML
     protected void Archive(MouseEvent event) {
         ClikArchive();
     }

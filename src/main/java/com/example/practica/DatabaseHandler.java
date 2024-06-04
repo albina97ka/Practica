@@ -25,7 +25,7 @@ public class DatabaseHandler extends Config {
         try {
             PreparedStatement prSt = this.getDbConnection().prepareStatement(insert);
             prSt.setString(1, user.getName());
-            prSt.setString(2, user.getLastName());
+            prSt.setString(2, user.getLastname());
             prSt.setString(3, user.getSurname());
             prSt.setString(4, user.getPassport());
             prSt.setString(5, user.getNumber());
