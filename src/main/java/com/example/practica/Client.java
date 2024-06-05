@@ -86,13 +86,15 @@ public class Client {
                 alert.setContentText("Все поля должны быть заполнены!");
                 alert.showAndWait();
             } else {
+                Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
+                successAlert.setHeaderText("Заявка принята");
+                successAlert.setContentText("Катайтесь с удовольстиев!");
+                successAlert.showAndWait();
+
                 ServicePerformed serviceperformed = new ServicePerformed(name, lastname, type, brand, model);
                 dbHandler.signCar(serviceperformed);
+                dbHandler.signArchive(serviceperformed);
 
-                Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
-                successAlert.setHeaderText("Успешная регистрация");
-                successAlert.setContentText("Пользователь зарегистрирован!");
-                successAlert.showAndWait();
             }
         });
 
@@ -107,7 +109,6 @@ public class Client {
             radioButton.setToggleGroup(carGroup);
             radioButton.setOnAction(event -> {
                 selectedCarName = radioButton.getId();
-                System.out.println("Selected car: " + selectedCarName);
             });
             Vbox.getChildren().add(radioButton);
         }

@@ -48,7 +48,7 @@
             <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                     <children>
-                        <Label layoutX="257.0" layoutY="30.0" text="История заказов ">
+                        <Label layoutX="314.0" layoutY="31.0" text="История заявок ">
                             <font>
                                 <Font size="23.0" />
                             </font>
@@ -63,7 +63,7 @@
                                 <TableColumn fx:id="Model_archive" prefWidth="149.0" text="Модель машины" />
                             </columns>
                         </TableView>
-                        <Button fx:id="obArchive" layoutX="480.0" layoutY="35.0" mnemonicParsing="false" onMouseClicked="#Archive" text="Обновить" />
+                        <Button fx:id="obArchive" layoutX="503.0" layoutY="36.0" mnemonicParsing="false" onMouseClicked="#Archive" text="Обновить" />
                   <Button fx:id="exit_archive" layoutX="743.0" layoutY="14.0" mnemonicParsing="false" text="Выход" />
                     </children>
                 </AnchorPane>

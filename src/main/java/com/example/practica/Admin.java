@@ -160,9 +160,6 @@ public class Admin {
             stage.setScene(new Scene(root));
             stage.showAndWait();
         });
-        obArchive.setOnAction(event -> {
-            signArchive();
-        });
         exit_archive.setOnAction(event -> {
             exit_archive.getScene().getWindow().hide();
 
@@ -188,16 +185,6 @@ public class Admin {
                 throw new RuntimeException(e);
             }
         });
-    }
-
-    private void signArchive() {
-        DatabaseHandler dbHandler = new DatabaseHandler();
-
-        String Name = CarName.getText();
-        String Registered = CarLastName.getText();
-        String Mail = CarType.getText();
-        String Phone = CarBrand.getText();
-        String Cost = CarModel.getText();
     }
 
     private void deletingCar() throws SQLException, ClassNotFoundException {

@@ -26,7 +26,7 @@ public class Const {
     public static final String ARCHIVE_LASTNAME = "Lastname_archive";
     public static final String ARCHIVE_TYPE = "Type_of_car_archive";
     public static final String ARCHIVE_BRAND = "Brand_archive";
-    public static final String ARCHIVE_MODEL = "Car_model_archive";
+    public static final String ARCHIVE_MODEL = "Car_model_achive";
 
     public Const() {
     }

@@ -142,7 +142,7 @@ public class DatabaseHandler extends Config {
             while (resultSet.next()){
                 list_Archive.add(new Service(resultSet.getInt("id_archive"), resultSet.getString("Name_archive"),
                         resultSet.getString("Lastname_archive"),resultSet.getString("Type_of_car_archive"), resultSet.getString("Brand_archive"),
-                        resultSet.getString("Car_model_archive")));
+                        resultSet.getString("Car_model_achive")));
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
