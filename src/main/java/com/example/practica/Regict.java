@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -70,9 +71,20 @@ public class Regict {
             String login= CarLogin.getText();
             String password = CarPassword.getText();
 
-            User user = new User(name, lastname, surname, passport, number, login, password);
-            dbHandler.signUser(user);
+            if (name.isEmpty() || lastname.isEmpty() || surname.isEmpty() || passport.isEmpty() || number.isEmpty() || login.isEmpty() || password.isEmpty()) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setHeaderText("Ошибка");
+                alert.setContentText("Все поля должны быть заполнены!");
+                alert.showAndWait();
+            } else {
+                User user = new User(name, lastname, surname, passport, number, login, password);
+                dbHandler.signUser(user);
 
+                Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
+                successAlert.setHeaderText("Успешная регистрация");
+                successAlert.setContentText("Пользователь зарегистрирован!");
+                successAlert.showAndWait();
+            }
         });
     }
 }

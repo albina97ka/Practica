@@ -8,6 +8,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #AFEEEE;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.practica.Avtoris">
     <children>
@@ -37,5 +38,10 @@
             <Image url="@Image/Clipped_image_20240603_192034.png" />
          </image>
       </ImageView>
+      <Text layoutX="240.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Carsharing">
+         <font>
+            <Font name="System Bold Italic" size="48.0" />
+         </font>
+      </Text>
     </children>
 </AnchorPane>

@@ -47,9 +47,9 @@ public class Admin {
     @FXML
     private TableColumn<Service, String> CarLastName;
     @FXML
-    private TableColumn<Service, String> CarBrand;
-    @FXML
     private TableColumn<Service, String> CarType;
+    @FXML
+    private TableColumn<Service, String> CarBrand;
     @FXML
     private TableColumn<Service, String> CarModel;
 
@@ -97,12 +97,12 @@ public class Admin {
 
         ObservableList<Service> list_Archive = dbHandler.Get_All_Archive();
 
-        IDarchive.setCellValueFactory(new PropertyValueFactory<Service, Integer>("IDarchive"));
-        Name_archive.setCellValueFactory(new PropertyValueFactory<Service, String>("Name_archive"));
-        lastname_archive.setCellValueFactory(new PropertyValueFactory<Service, String>("lastname_archive"));
-        brand_archive.setCellValueFactory(new PropertyValueFactory<Service, String>("brand_archive"));
-        type_archive.setCellValueFactory(new PropertyValueFactory<Service, String>("type_archive"));
-        Model_archive.setCellValueFactory(new PropertyValueFactory<Service, String>("Model_archive"));
+        IDarchive.setCellValueFactory(new PropertyValueFactory<Service, Integer>("IDcar"));
+        Name_archive.setCellValueFactory(new PropertyValueFactory<Service, String>("CarName"));
+        lastname_archive.setCellValueFactory(new PropertyValueFactory<Service, String>("CarLastName"));
+        brand_archive.setCellValueFactory(new PropertyValueFactory<Service, String>("CarBrand"));
+        type_archive.setCellValueFactory(new PropertyValueFactory<Service, String>("CarType"));
+        Model_archive.setCellValueFactory(new PropertyValueFactory<Service, String>("CarModel"));
 
         TableArchive.setItems(list_Archive);
     }
@@ -139,11 +139,11 @@ public class Admin {
         TableUser.setItems(list_users);
     }
 
-
     @FXML
     void initialize() {
         ClikUser();
         ClikCar();
+        ClikArchive();
         exit_car.setOnAction(event -> {
             exit_car.getScene().getWindow().hide();
 
@@ -159,6 +159,9 @@ public class Admin {
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
             stage.showAndWait();
+        });
+        obArchive.setOnAction(event -> {
+            signArchive();
         });
         exit_archive.setOnAction(event -> {
             exit_archive.getScene().getWindow().hide();
@@ -186,6 +189,17 @@ public class Admin {
             }
         });
     }
+
+    private void signArchive() {
+        DatabaseHandler dbHandler = new DatabaseHandler();
+
+        String Name = CarName.getText();
+        String Registered = CarLastName.getText();
+        String Mail = CarType.getText();
+        String Phone = CarBrand.getText();
+        String Cost = CarModel.getText();
+    }
+
     private void deletingCar() throws SQLException, ClassNotFoundException {
         DatabaseHandler dbHandler = new DatabaseHandler();
 

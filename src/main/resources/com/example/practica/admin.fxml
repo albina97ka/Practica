@@ -40,7 +40,7 @@
                   </TableView>
                   <Button fx:id="delete_car" layoutX="199.0" layoutY="21.0" mnemonicParsing="false" onMouseClicked="#Car" text="Удалить заявку" />
                   <Button fx:id="exit_car" layoutX="735.0" layoutY="9.0" mnemonicParsing="false" text="Выход" />
-                  <TextField fx:id="Id_car" layoutX="37.0" layoutY="21.0" text="ID" />
+                  <TextField fx:id="Id_car" layoutX="37.0" layoutY="21.0" promptText="ID" />
                     </children></AnchorPane>
             </content>
         </Tab>

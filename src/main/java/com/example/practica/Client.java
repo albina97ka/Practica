@@ -4,17 +4,13 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.RadioButton;
+import javafx.scene.control.*;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+
 import java.io.IOException;
-import javafx.scene.control.TextField;
 
 public class Client {
-
-    @FXML
-    private Label LabelCar;
 
     @FXML
     private TextField Lastname_car;
@@ -23,10 +19,10 @@ public class Client {
     private TextField Name_car;
 
     @FXML
-    private Button arenda_client;
+    private VBox Vbox;
 
     @FXML
-    private Button buttonCar_calc;
+    private Button arenda_client;
 
     @FXML
     private Button drCar;
@@ -38,22 +34,14 @@ public class Client {
     private Button exit_client;
 
     @FXML
-    private RadioButton radio_1day;
-
-    @FXML
-    private RadioButton radio_1hour;
-
-    @FXML
-    private RadioButton radio_5hour;
-
-    @FXML
     private Button srCar;
 
-    @FXML
-    void initialize() {
-        exit_client.setOnAction(event -> {
-            exit_client.getScene().getWindow().hide();
+    private ToggleGroup carGroup;
+    private String selectedCarName;
 
+    @FXML
+    public void initialize() {
+        exit_client.setOnAction(event -> {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getResource("avtoris.fxml"));
             try {
@@ -61,43 +49,67 @@ public class Client {
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-
             Parent root = loader.getRoot();
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
             stage.showAndWait();
         });
-        DatabaseHandler dbHandler = new DatabaseHandler();
-        arenda_client.setOnAction(event ->{
 
+        dshCar.setOnAction(event -> updateCarOptions("Дешевый сегмент", new String[]{"Лада Гранта", "Шевроле Ланос", "Фольксваген Поло", "Рено Логан", "Хундай Солярис"}));
+        srCar.setOnAction(event -> updateCarOptions("Средний сегмент", new String[]{"Кия Рио", "Шкода Октавия", "Мазда 6", "Тойота Камри", "Ауди А6"}));
+        drCar.setOnAction(event -> updateCarOptions("Дорогой сегмент", new String[]{"Ауди Р8", "Ауди РС7", "Бмв М8", "Мерседес С63", "Мерседес ГТ63"}));
+
+        DatabaseHandler dbHandler = new DatabaseHandler();
+        arenda_client.setOnAction(event -> {
             String name = Name_car.getText();
             String lastname = Lastname_car.getText();
             String type = "";
-            if (dshCar.isPressed()){type="Дешевый сегмент";}
-            else if (srCar.isPressed()) {type = "Средний сегмент";}
-            else {type = "Дорогой сегмент";}
+            if (dshCar.isPressed()) {
+                type = "Дешевый сегмент";
+            } else if (srCar.isPressed()) {
+                type = "Средний сегмент";
+            } else {
+                type = "Дорогой сегмент";
+            }
             String brand = "";
-           // if (.isPressed()){brand="";}
-            //else if (.isPressed()) {brand = "";}
-            //else {brand = "";}
             String model = "";
 
-            ServicePerformed serviceperformed = new ServicePerformed(name, lastname, type, brand, model);
-            dbHandler.signCar(serviceperformed);
-        });
-    }
-    private void calculateCost() {
-        double baseCost = 0;
+            if (selectedCarName != null && selectedCarName.contains(" ")) {
+                String[] parts = selectedCarName.split(" ", 2);
+                brand = parts[0];
+                model = parts[1];
+            }
 
-        if (radio_1hour.isSelected()) {
-            baseCost *= 2;
+            if (name.isEmpty() || lastname.isEmpty() || type.isEmpty() || brand.isEmpty() || model.isEmpty()) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setHeaderText("Ошибка");
+                alert.setContentText("Все поля должны быть заполнены!");
+                alert.showAndWait();
+            } else {
+                ServicePerformed serviceperformed = new ServicePerformed(name, lastname, type, brand, model);
+                dbHandler.signCar(serviceperformed);
+
+                Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
+                successAlert.setHeaderText("Успешная регистрация");
+                successAlert.setContentText("Пользователь зарегистрирован!");
+                successAlert.showAndWait();
+            }
+        });
+
+    }
+
+    private void updateCarOptions(String segment, String[] carNames) {
+        Vbox.getChildren().clear();
+        carGroup = new ToggleGroup();
+        for (String carName : carNames) {
+            RadioButton radioButton = new RadioButton(carName);
+            radioButton.setId(carName);
+            radioButton.setToggleGroup(carGroup);
+            radioButton.setOnAction(event -> {
+                selectedCarName = radioButton.getId();
+                System.out.println("Selected car: " + selectedCarName);
+            });
+            Vbox.getChildren().add(radioButton);
         }
-        if (radio_5hour.isSelected()) {
-            baseCost *= 4;
-        }
-        if (radio_1day.isSelected()) {
-            baseCost *= 7;
-        }
-        LabelCar.setText(baseCost + " руб");
     }
 }

@@ -1,65 +1,65 @@
 package com.example.practica;
 
 public class Service {
-    int id_car;
-    String Name_car,Lastname_car,Type_of_car_car,Brand_car,Car_model_car;
+    int IDcar;
+    String CarName,CarLastName,CarType,CarBrand,CarModel;
 
-    public Service(int id_car, String Name_car, String Lastname_car, String Type_of_car_car, String Brand_car, String Car_model_car) {
-        this.id_car = id_car;
-        this.Name_car = Name_car;
-        this.Lastname_car = Lastname_car;
-        this.Type_of_car_car = Type_of_car_car;
-        this.Brand_car = Brand_car;
-        this.Car_model_car = Car_model_car;
+    public Service(int IDcar, String CarName, String CarLastName, String CarType, String Brand_car, String CarModel) {
+        this.IDcar = IDcar;
+        this.CarName = CarName;
+        this.CarLastName = CarLastName;
+        this.CarType = CarType;
+        this.CarBrand = Brand_car;
+        this.CarModel = CarModel;
     }
 
     public Service(String name, String lastname, String type, String brand, String model) {
     }
 
-    public int getId_car() {return id_car;}
+    public int getIDcar() {return IDcar;}
 
-    public void setId_car(int id_car) {
-        this.id_car = id_car;
+    public void setIDcar(int id_car) {
+        this.IDcar = IDcar;
     }
 
-    public String getName_car() {
-        return Name_car;
+    public String getCarName() {
+        return CarName;
     }
 
-    public void setName_car(String Name_car) {
-        Name_car = Name_car;
+    public void setCarName(String CarName) {
+        CarName = CarName;
     }
 
-    public String getLastname_car() {
-        return Lastname_car;
+    public String getCarLastName() {
+        return CarLastName;
     }
 
-    public void setLastname_car(String Lastname_car) {
-        Lastname_car = Lastname_car;
+    public void setCarLastName(String CarLastName) {
+        CarLastName = CarLastName;
     }
 
-    public String getType_of_car_car() {
-        return Type_of_car_car;
+    public String getCarType() {
+        return CarType;
     }
 
-    public void setType_of_car_car(String Type_of_car_car) {
-        Type_of_car_car = Type_of_car_car;
+    public void setCarType(String CarType) {
+        CarType = CarType;
     }
 
-    public String getBrand_car() {
-        return Brand_car;
+    public String getCarBrand() {
+        return CarBrand;
     }
 
-    public void setBrand_car(String Brand_car) {
-        Brand_car = Brand_car;
+    public void setCarBrand(String CarBrand) {
+        CarBrand = CarBrand;
     }
 
-    public String getCar_model_car() {
-        return Car_model_car;
+    public String getCarModel() {
+        return CarModel;
     }
 
-    public void setCar_model_car(String Car_model_car) {
-        Car_model_car = Car_model_car;
+    public void setCarModel(String CarModel) {
+        CarModel = CarModel;
     }
 }
 
