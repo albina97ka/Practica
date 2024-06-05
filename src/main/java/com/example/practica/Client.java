@@ -38,6 +38,7 @@ public class Client {
 
     private ToggleGroup carGroup;
     private String selectedCarName;
+    private String selectedSegment;
 
     @FXML
     public void initialize() {
@@ -55,22 +56,27 @@ public class Client {
             stage.showAndWait();
         });
 
-        dshCar.setOnAction(event -> updateCarOptions("Дешевый сегмент", new String[]{"Лада Гранта", "Шевроле Ланос", "Фольксваген Поло", "Рено Логан", "Хундай Солярис"}));
-        srCar.setOnAction(event -> updateCarOptions("Средний сегмент", new String[]{"Кия Рио", "Шкода Октавия", "Мазда 6", "Тойота Камри", "Ауди А6"}));
-        drCar.setOnAction(event -> updateCarOptions("Дорогой сегмент", new String[]{"Ауди Р8", "Ауди РС7", "Бмв М8", "Мерседес С63", "Мерседес ГТ63"}));
+        dshCar.setOnAction(event -> {
+            selectedSegment = "Дешевый сегмент";
+            updateCarOptions(selectedSegment, new String[]{"Лада Гранта", "Шевроле Ланос", "Фольксваген Поло", "Рено Логан", "Хундай Солярис"});
+        });
+
+        srCar.setOnAction(event -> {
+            selectedSegment = "Средний сегмент";
+            updateCarOptions(selectedSegment, new String[]{"Кия Рио", "Шкода Октавия", "Мазда 6", "Тойота Камри", "Ауди А6"});
+        });
+
+        drCar.setOnAction(event -> {
+            selectedSegment = "Дорогой сегмент";
+            updateCarOptions(selectedSegment, new String[]{"Ауди Р8", "Ауди РС7", "Бмв М8", "Мерседес С63", "Мерседес ГТ63"});
+        });
 
         DatabaseHandler dbHandler = new DatabaseHandler();
         arenda_client.setOnAction(event -> {
             String name = Name_car.getText();
             String lastname = Lastname_car.getText();
-            String type = "";
-            if (dshCar.isPressed()) {
-                type = "Дешевый сегмент";
-            } else if (srCar.isPressed()) {
-                type = "Средний сегмент";
-            } else {
-                type = "Дорогой сегмент";
-            }
+            String type = selectedSegment;
+
             String brand = "";
             String model = "";
 

@@ -63,7 +63,6 @@
                                 <TableColumn fx:id="Model_archive" prefWidth="149.0" text="Модель машины" />
                             </columns>
                         </TableView>
-                        <Button fx:id="obArchive" layoutX="503.0" layoutY="36.0" mnemonicParsing="false" onMouseClicked="#Archive" text="Обновить" />
                   <Button fx:id="exit_archive" layoutX="743.0" layoutY="14.0" mnemonicParsing="false" text="Выход" />
                     </children>
                 </AnchorPane>

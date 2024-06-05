@@ -75,8 +75,6 @@ public class Admin {
     @FXML
     private Button delete_car;
     @FXML
-    private Button obArchive;
-    @FXML
     private Button exit_archive;
     @FXML
     private Button exit_car;
@@ -85,11 +83,6 @@ public class Admin {
 
     @FXML
     protected void Car(MouseEvent event) {ClikCar();}
-
-    @FXML
-    protected void Archive(MouseEvent event) {
-        ClikArchive();
-    }
 
 
     private void ClikArchive() {
